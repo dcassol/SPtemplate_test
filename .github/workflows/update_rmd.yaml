@@ -1,7 +1,7 @@
 name: Triggered Rmd templates files update
 on:
   repository_dispatch:
-    types: [rmd_updated]
+    types: [rmd-updated]
 
 jobs:
   hugobuild:
