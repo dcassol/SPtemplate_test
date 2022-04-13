@@ -11,20 +11,20 @@ folder_base=$(basename ${update_dir})
 echo ${update_dir}
 echo ${git_link}
 
-# # clean temp
-# echo "Clean dwonload folder ${down_folder}"
-# rm -rf ${down_folder}
-# # clone repo 
-# echo "Downloading ${update_dir} to \"${down_folder}\""
-# git clone ${git_link} ${down_folder}
-# 
-# # update
-# echo "Clean update folder ${update_dir}"
-# rm -rf ${update_dir}
-# mkdir -p ${update_dir}
-# # copy 
-# echo "Update files"
-# cp -r ${down_folder}/cwl/* ${update_dir}
-# echo "done"
+# clean temp
+echo "Clean dwonload folder ${down_folder}"
+rm -rf ${down_folder}
+# clone repo
+echo "Downloading ${update_dir} to \"${down_folder}\""
+git clone ${git_link} ${down_folder}
+
+# update
+echo "Clean update folder ${update_dir}"
+rm -rf ${update_dir}
+mkdir -p ${update_dir}
+# copy
+echo "Update files"
+cp -r ${down_folder}/vignettes/* ${update_dir}
+echo "done"
 
 
