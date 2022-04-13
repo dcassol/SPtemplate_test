@@ -1,0 +1,26 @@
+name: Triggered Rmd templates files update
+on:
+  repository_dispatch:
+    types: [rmd_updated]
+
+jobs:
+  hugobuild:
+    name: pull new/edit Rmd
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update hash
+        run: |
+          bash .github/bash/update_rmd.sh https://github.com/dcassol/sprdata_test.git vignettes/
+      - name: Update github
+        run: |
+          git config --local user.name "dcassol"
+          git config --local user.email "danicassol@gmail.com"
+          git add -A
+          git commit -m "Bot update rmd description files" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+
