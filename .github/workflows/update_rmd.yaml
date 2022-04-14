@@ -39,6 +39,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          install.packages('remotes')
           install.packages(c("BiocManager", "knitcitations"))
           BiocManager::install("Bioconductor/BiocStyle")
           BiocManager::install("tgirke/systemPipeR")
