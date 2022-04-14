@@ -1,5 +1,5 @@
 ---
-title: "RIBO-Seq Workflow Template" 
+title: "RIBO-Seq Workflow Template_test" 
 author: "Author: Daniela Cassol (danielac@ucr.edu) and Thomas Girke (thomas.girke@ucr.edu)"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`" 
 output:
@@ -15,10 +15,7 @@ fontsize: 14pt
 bibliography: bibtex.bib
 ---
 
-<!--
-- Compile from command-line
-Rscript -e "rmarkdown::render('systemPipeRIBOseq.Rmd', c('BiocStyle::html_document'), clean=F); knitr::knit('systemPipeRIBOseq.Rmd', tangle=TRUE)"
--->
+
 
 ```{css, echo=FALSE}
 pre code {
