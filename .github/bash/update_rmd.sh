@@ -34,6 +34,7 @@ echo "Update inst files"
 cp -r ${down_folder}/vignettes/systemPipeRIBOseq.Rmd inst/extdata/workflows/riboseq/
 cp -r ${down_folder}/vignettes/bibtex.bib inst/extdata/workflows/riboseq/
 cp -r ${down_folder}/vignettes/results/* inst/extdata/workflows/riboseq/
+cd inst/extdata/workflows/riboseq/
 Rscript -e "rmarkdown::render('systemPipeRIBOseq.Rmd', c('BiocStyle::html_document'), clean=T); knitr::knit('systemPipeRIBOseq.Rmd', tangle=TRUE)"
 echo "done"
 
