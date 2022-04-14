@@ -58,10 +58,9 @@ jobs:
           BiocManager::install("tgirke/systemPipeR")
           BiocManager::install("tgirke/systemPipeRdata")
         shell: Rscript {0}
-  build:
-    name: pull new/edit Rmd
-    steps:
-      - uses: actions/checkout@v2
+
+      - name: pull new/edit Rmd
+        uses: actions/checkout@v2
       - name: Update hash
         run: |
           bash .github/bash/update_rmd.sh https://github.com/dcassol/srpdata_test.git vignettes/
